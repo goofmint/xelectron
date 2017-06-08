@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="">
+    <script>
+      var getFiles = function(files) {
+        if (files.length == 0) {
+          document.getElementById('files').value = 'ファイルがありません';
+        }else{
+          document.getElementById('files').value = files;
+        }
+        
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="document.title = 'xojo://localhost/hello'">こんにちは</button><br />
+    <button onclick="document.title = 'xojo://localhost/files?callback=getFiles'">ファイル一覧</button><br />
+    <button onclick="document.title = 'xojo://localhost/files?callback=getFiles&path=/&absolute=true'">ファイル一覧（パス指定）</button><br />
+    <textarea id="files"></textarea>
+  </body>
+</html>
